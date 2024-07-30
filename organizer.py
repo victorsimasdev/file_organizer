@@ -1,7 +1,7 @@
 import os
 import shutil
 
-path = input('Insert path to organize: ')
+path = input('Insira o caminho para organizar: ')
 existing_files = 0
 files = os.listdir(path)
 try:
@@ -20,8 +20,8 @@ try:
                 shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
             else:
                 existing_files += 1
-    if existing_files != 0:
-        print(f'Arquivos organizados com sucesso! {existing_files} arquivos já existentes não foram movidos.')
     print('Arquivos organizados com sucesso!')
+    if existing_files != 0:
+        print(f'{existing_files} arquivos já existentes não foram movidos.')
 except Exception as e:
     print('Erro ao organizar arquivos: ', e)

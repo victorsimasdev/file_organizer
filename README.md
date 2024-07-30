@@ -21,7 +21,3 @@ git clone https://github.com/victorsimasdev/file_organizer
   - Colar o caminho da pasta e apertar enter
 
 ### O programa irá retornar uma mensagem informando execução bem sucedida ou exibirá um erro caso aconteça.
-
-<br>
-
-Projeto feito para aprofundar conhecimento, algumas medidas de segurança foram tomadas para evitar perda de arquivos mas pode existir algum erro não abordado, caso tenha sugestão ou ache um error abra uma issue, serão bem apreciadas!

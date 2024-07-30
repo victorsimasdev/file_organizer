@@ -14,6 +14,6 @@ try:
         else:
             os.makedirs(path+'/'+extension)
             shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
-    print('Files organized.')
+    print('Arquivos organizados com sucesso!')
 except Exception as e:
-    print(e)
+    print('Erro ao organizar arquivos: ', e)

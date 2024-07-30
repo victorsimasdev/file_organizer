@@ -1,6 +1,7 @@
 # Organizador de arquivos
 
-Projeto feito em Python para aprofundar conhecimento, algumas medidas de segurança foram tomadas para evitar perda de arquivos mas pode existir algum erro não abordado, caso tenha sugestão ou ache um error abra uma issue, serão bem apreciadas!
+Projeto feito em Python para aprofundar conhecimento, caso tenha sugestão ou ache um error abra uma issue, serão bem apreciadas!
+> Algumas medidas de segurança foram tomadas para evitar perda de arquivos mas pode existir algum erro não abordado!
 
 ## Instalação:
 

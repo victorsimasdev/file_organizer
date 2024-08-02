@@ -19,14 +19,15 @@ def organize_files(path):
                 os.makedirs(extension_dir)
 
             new_file_path = os.path.join(extension_dir, file)
-            if not os.path.exists(new_file_path):
-                shutil.move(file_path, new_file_path)
-            else:
-                if not filecmp.cmp(file_path, new_file_path, shallow=False):
-                    new_file_path = os.path.join(extension_dir, f"copy_{file}")
+            if not extension == 'exe':
+                if not os.path.exists(new_file_path):
                     shutil.move(file_path, new_file_path)
                 else:
-                    existing_files += 1
+                    if not filecmp.cmp(file_path, new_file_path, shallow=False):
+                        new_file_path = os.path.join(extension_dir, f"copy_{file}")
+                        shutil.move(file_path, new_file_path)
+                    else:
+                        existing_files += 1
 
         if existing_files != 0:
             print(f'{existing_files} arquivos já existentes não foram movidos.')

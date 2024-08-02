@@ -28,7 +28,6 @@ def organize_files(path):
                 else:
                     existing_files += 1
 
-        print('Arquivos organizados com sucesso!')
         if existing_files != 0:
             print(f'{existing_files} arquivos já existentes não foram movidos.')
     except Exception as e:

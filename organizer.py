@@ -1,6 +1,8 @@
 import os
 import shutil
 import filecmp
+import tkinter as tk
+from tkinter import filedialog, messagebox
 
 def organize_files(path):
     existing_files = 0
@@ -15,7 +17,7 @@ def organize_files(path):
             extension = extension[1:]
             extension_dir = os.path.join(path, extension)
             
-            if not os.path.exists(extension_dir):
+            if not os.path.exists(extension_dir) and extension != 'exe':
                 os.makedirs(extension_dir)
 
             new_file_path = os.path.join(extension_dir, file)
@@ -30,10 +32,17 @@ def organize_files(path):
                         existing_files += 1
 
         if existing_files != 0:
-            print(f'{existing_files} arquivos já existentes não foram movidos.')
+            messagebox.showinfo("Organização de Arquivos", f'Arquivos organizados com sucesso! {existing_files} arquivos já existentes não foram movidos.')
+        else:
+            messagebox.showinfo("Organização de Arquivos", 'Arquivos organizados com sucesso!')
     except Exception as e:
-        print('Erro ao organizar arquivos: ', e)
+        messagebox.showerror("Erro", f'Erro ao organizar arquivos: {e}')
 
+def select_organize():
+    root = tk.Tk()
+    root.withdraw()
+    folder_selected = filedialog.askdirectory()
+    if folder_selected:
+        organize_files(folder_selected)
 if __name__ == "__main__":
-    path = os.path.dirname(os.path.abspath(__file__))
-    organize_files(path)
+    select_organize()
